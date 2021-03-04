@@ -1,0 +1,56 @@
+
+@mixin label {
+    padding: .5rem;
+    border-radius: 6px;
+    // width: fit-content;
+
+    i {
+        margin-inline-end: .5rem;
+    }
+}
+
+.label-gray {
+    @include label;
+    color: black;
+    background: var(--gray-light-1);
+    // font-size: var(--font-size-s1);
+}
+
+.label-blue {
+    @include label;
+    background: var(--blue);
+    color: white;
+    font-size: var(--font-size-s1);
+}
+
+.label-green {
+    @include label;
+    background: var(--green);
+    color: white;
+    font-size: var(--font-size-s1);
+}
+
+.label-red {
+    @include label;
+    background: var(--red);
+    color: white;
+    font-size: var(--font-size-s1);
+}
+
+.info-bar {
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
+    padding-block-start: 1rem;
+    padding-block-end: 1rem;
+    color: black;
+    width: fit-content;
+    // font-size: var(--font-size-l1);
+    font-weight: var(--font-weight-b);
+    border-inline-start: 4px black solid;
+    background: var(--gray-light-0);
+    // border-inline-end-radius: var(--border-radius)
+    // border-bottom: 2px solid black;
+    // border-radius: var(--border-radius);
+    // border-bottom: 1px solid #262626;
+    // background: lightgray;
+}

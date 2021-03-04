@@ -1,0 +1,11 @@
+.error {
+    display: block;
+    color: var(--red);
+    font-size: var(--font-size-s2);
+    animation: fadeIn 50ms ease-in;
+    margin-inline-start: 6px;
+}
+
+.hide {
+    display: none;
+}

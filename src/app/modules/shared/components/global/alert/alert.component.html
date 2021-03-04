@@ -1,0 +1,15 @@
+<div class="container" [@listAnimationFast]="alerts.length">
+    <ng-container *ngFor="let alert of alerts">
+        <div class="alert {{ cssClass(alert.alertType) }}" [class.closed]="!alert.opened">
+            <div class="message">
+                <i *ngIf="cssClass(alert.alertType) === 'info'" class="fas fa-info-circle icon"></i>
+                <i *ngIf="cssClass(alert.alertType) === 'error'" class="far fa-times-circle icon"></i>
+                <i *ngIf="cssClass(alert.alertType) === 'success'" class="far fa-check-circle icon"></i>
+                <i *ngIf="cssClass(alert.alertType) === 'warn'" class="far fas fa-exclamation-circle icon"></i>
+                <div class="text">
+                    {{ alert.message }}
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

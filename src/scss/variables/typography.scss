@@ -1,0 +1,24 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
+
+:root {
+        --font-size: 14px;
+        --font-color: var(--base-gray);
+        --font-family: 'Raleway', sans-serif;
+
+        // Rubik
+        --font-weight-t: 300;
+        --font-weight: 500;
+        --font-weight-b: 700;
+        --font-weight-b2: 700;
+
+        --font-size-s2: 0.7rem;
+        --font-size-s1: 0.85rem;
+        --font-size-l1: 1.15rem;
+        --font-size-l2: 1.25rem;
+        --font-size-l3: 1.35rem;
+        --font-size-l4: 1.5rem;
+        --font-size-l5: 1.71rem;
+        --font-size-l6: 2.14rem;
+}

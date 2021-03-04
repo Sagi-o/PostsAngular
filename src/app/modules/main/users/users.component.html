@@ -1,0 +1,27 @@
+<div class="users">
+    <div class="users__user" *ngFor="let user of (usersPosts$ | async) | keyvalue">
+        <div class="users__user-id mb1">
+            Posts of User ID: {{ user.key}}
+        </div>
+        <div class="users__post" *ngFor="let post of user.value">
+            <div>
+                <span class="bold">
+                    Post ID:
+                </span>
+                {{ post.id }}
+            </div>
+            <div>
+                <span class="bold">
+                    Title:
+                </span>
+                {{ post.title }}
+            </div>
+            <div>
+                <span class="bold">
+                    Body:
+                </span>
+                {{ post.body }}
+            </div>
+        </div>
+    </div>
+</div>

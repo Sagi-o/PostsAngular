@@ -1,0 +1,33 @@
+[appTooltip] {
+    position: relative;
+}
+  
+.tooltip {
+    position: absolute;
+    padding: .35rem;
+    border-radius: 6px;
+    background: rgba($color: #000000, $alpha: 0.75);
+    color: white;
+    box-shadow: var(--shadow-3);
+    width: fit-content;
+    max-width: 220px;
+    min-width: 60px;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fadeInTooltip 200ms 300ms ease-out forwards;
+    margin-block-start: .5rem;
+    opacity: 0;
+    font-size: var(--font-size-s1);
+    z-index: 1100;
+}
+
+@keyframes fadeInTooltip {
+    from {
+        opacity: 0;
+    }
+  
+    to {
+        opacity: 1;
+    }
+}

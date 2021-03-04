@@ -1,0 +1,178 @@
+:root {
+    --input-line-color: #e5e5e5;
+    // Input shadows
+    --shadow-line-bottom-not-focused: 0 1px 0 0 var(--input-line-color);
+    --shadow-line-bottom-focused: 0 2px 0 0 var(--primary-dark);
+    --shadow-line-bottom-error: 0 2px 0 0 var(--red);
+    --shadow-line-bottom-valid: 0 2px 0 0 var(--green);
+
+    --normal-input-width: 18rem;
+}
+
+// .ng-invalid .select, select .ng-invalid {
+//     border: 1px solid var(--red);
+//     border-radius: 5px;
+// }
+
+// .ng-valid .select, select .ng-valid {
+//     border: 1px solid transparent;
+//     border-radius: 5px;
+// }
+
+// .ng-pristine .select {
+//     border: 1px solid var(--primary-light);
+//     border-radius: 5px;
+// }
+
+// Invalid
+.ng-invalid:not(form)[type="text"],
+.ng-invalid:not(form)[type="number"],
+.ng-invalid:not(form)[type="email"],
+.ng-invalid:not(form)[type="password"],
+.ng-invalid:not(form)[type="tel"]
+  {
+    // box-shadow: var(--shadow-line-bottom-error);
+    // border: 2px solid var(--red);
+    box-shadow: 0 0 0 2px var(--red);
+    border: 1px solid transparent;
+  }
+
+// Valid
+.ng-valid:not(form)[type="text"],
+.ng-valid:not(form)[type="number"],
+.ng-valid:not(form)[type="email"],
+.ng-valid:not(form)[type="password"],
+.ng-valid:not(form)[type="tel"]
+{
+    // box-shadow: var(--shadow-line-bottom-valid);
+    // border: 2px solid var(--green);
+    box-shadow: 0 0 0 2px var(--green);
+    border: 1px solid transparent;
+}
+
+// Pristine
+.ng-pristine:not(form)[type="text"],
+.ng-pristine:not(form)[type="number"],
+.ng-pristine:not(form)[type="email"],
+.ng-pristine:not(form)[type="password"],
+.ng-pristine:not(form)[type="tel"]
+{
+    // box-shadow: var(--shadow-line-bottom-not-focused);
+    // border: 1px solid var(--shadow-line-bottom-not-focused);
+    box-shadow: 0 0 0 1px #AFAFAF;
+    border: 1px solid transparent;
+}
+
+@mixin input {
+    margin: 0.5rem 0;
+    background: transparent;
+    width: var(--normal-input-width);
+    height: 2.3rem;
+    transition: var(--normal-speed);
+    display: block;
+    transition: var(--fast-speed);
+    font-size: 1rem;
+    color: var(--black);
+
+    &:focus {
+        // border: 2px solid var(--primary);
+        box-shadow: 0 0 0 2px var(--primary);
+        border: 1px solid transparent;
+        // box-shadow: var(--shadow-0);
+    }
+}
+
+.input {
+    @include input;
+}
+
+.input-s1 {
+    @include input;
+    width: 8.45rem;
+}
+
+.input-s2 {
+    @include input;
+    width: 5rem;
+}
+
+.input-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+
+    i:nth-child(1) {
+        width: 16px;
+    }
+
+    // Button after input
+    i:nth-child(3) {
+        transition: var(--fast-speed);
+        cursor: pointer;
+
+        &:hover {
+            color: var(--primary);
+        }
+    }
+}
+
+.textarea {
+    margin: 0.5rem 0;
+    display: block;
+    border-radius: 5px;
+    max-height: 15rem;
+    min-width: 10rem;
+    min-height: 2rem;
+    height: 7rem;
+    padding: 7px;
+    resize: none;
+    background: transparent;
+    color: var(--black);
+    transition: var(--fast-speed);
+
+    &:focus {
+        box-shadow: 0 0 0 1pt var(--primary);
+    }
+}
+
+.title-input {
+    margin-block-end: 1.5rem;
+    width: 100%;
+
+    &__title {
+        color: var(--dark-1);
+        font-size: 13px;
+    }
+
+    &__subtitle {
+        font-size: var(--font-size-s1);
+    }
+
+    &__input {
+        // margin-block-start: .01rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+
+        span {
+            margin-inline-end: .5rem;
+            min-width: 90px;
+            max-width: 90px;
+        }
+    }
+
+    input, textarea {
+        width: 100%;
+        box-shadow: 0 0 0 1px #AFAFAF;
+        border-radius: 5px;
+        padding: .5rem;
+    }
+}
+
+
+@media only screen and (max-width: $mobile) {
+    .textarea  {
+        width: 100%;
+    }
+}

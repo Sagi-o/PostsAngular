@@ -1,0 +1,166 @@
+
+$height: 32px;
+$padding: 0;
+
+@mixin button {
+    display: block;
+    transition: var(--fast-speed);
+    border-radius: var(--border-radius);
+    width: 100%;
+    padding-right: $padding;
+    padding-left: $padding;
+    height: $height;
+    color: black;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+    line-height: $height;
+    text-align: center;
+
+    // For form validation
+    &:disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+        color: #BABABA;
+        background: #F1F1F1;
+    }
+
+    &:active {
+        transform: scale(0.99);
+        filter: brightness(0.99);
+    }
+
+    // For style applying
+    &.disabled {
+        // opacity: 0.6;
+        filter: grayscale(100%);
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    &.loading {
+        &::after {
+            opacity: 1;
+            display: block;
+        }
+
+        background: transparent;
+        color: transparent;
+        pointer-events: none;
+    }
+
+    .button__icon {
+        margin-inline-end: 0.5rem;
+        display: inline-block;
+    }
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 45%;
+    // transform: translateX(-50%);
+    // margin-left: -50%;
+    font-size: 0%;
+    opacity: 0;
+    border: 3px solid var(--accent);
+    border-top-color: var(--accent-light);
+    min-width: 36px;
+    min-height: 36px;
+    max-width: 36px;
+    max-height: 36px;
+    border-radius: 50%;
+    animation: spin 1s ease-in-out infinite;
+    display: none;
+}
+
+.button-primary {
+    @include button;
+    background-color: var(--primary);
+    color: white;
+    font-weight: var(--font-weight-b);
+
+    &:hover {
+        opacity: 0.85;
+    }
+}
+
+.button-primary-1 {
+    @include button;
+    background-color: var(--primary-light);
+    color: var(--primary);
+    font-weight: var(--font-weight-b);
+
+    &:hover {
+        opacity: 0.85;
+    }
+}
+
+.button-primary--outline {
+    @include button;
+    background-color: var(--light-1);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding-left: $padding;
+    padding-right: $padding;
+
+
+    &:hover {
+        filter: brightness(0.96);
+    }
+}
+
+.button-primary-light--outline {
+    @include button;
+    background-color: transparent;
+    color: #12C5B7;
+    border: 1px solid #12C5B7;
+    padding-left: $padding;
+    padding-right: $padding;
+
+    &:hover {
+        filter: brightness(0.96);
+    }
+}
+
+.button-accent {
+    @include button;
+    background-color: var(--accent);
+    color: white;
+    font-weight: var(--font-weight-b);
+
+    &:hover {
+        opacity: 0.85;
+    }
+}
+
+.button-accent--outline {
+    @include button;
+    background-color: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+
+    &:hover {
+        filter: brightness(0.96);
+    }
+}
+
+.button-icon {
+    padding-right: .5rem;
+    padding-left: .5rem;
+    max-width: 45px;
+}
+
+@import 'src/scss/variables/breakpoints';
+
+@media only screen and (max-width: $mobile) {    
+    .button-primary, .button-accent {
+        font-size: 0.93rem;
+        // height: 32px;
+        // padding-right: $padding;
+        // padding-left: $padding;
+        // line-height: 32px;
+    }
+}

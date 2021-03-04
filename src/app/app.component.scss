@@ -1,0 +1,80 @@
+.app-content {
+    position: relative;
+}
+
+// Modal Styles
+#modal-container {
+    position: fixed;
+    // top: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 998;
+    border-radius: 4px;
+    background: white;
+    box-shadow: var(--shadow-0);
+    border-radius: var(--border-radius);
+    overflow-y: auto;
+    // max-height: 900px;
+    max-height: 90%;
+    height: fit-content;
+    animation: fadeIn 150ms ease-out;
+    transition: 150ms ease-out;
+}
+
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    // 0.6
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 997;
+    animation: fadeIn 150ms ease-out;
+    // backdrop-filter: blur(3px);
+    transition: 150ms ease-out;
+}
+
+#close {
+    $size: 2rem;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: var(--font-size-l1);
+    // background: var(--primary-light);
+    background: transparent;
+    border-radius: 50%;
+    height: $size;
+    width: $size;
+    line-height: $size;
+    text-align: center;
+    z-index: 999;
+    cursor: pointer;
+    color: black;
+    transition: var(--fast-speed);
+    color: var(--text-color-1);
+}
+
+.hidden {
+    display: none;
+}
+
+.shown {
+    display: block;
+}
+
+@import 'src/scss/variables/breakpoints';
+
+@media only screen and (max-width: $tablet) {
+    #modal-container {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 0;
+        transform: translateX(0);
+        max-height: none;
+    }
+}

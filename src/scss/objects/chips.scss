@@ -1,0 +1,26 @@
+.chips {
+    display: flex;
+    flex-direction: row;
+    margin-block-start: auto;
+    // margin-block-end: 2rem;
+    flex-wrap: wrap;
+    max-width: 600px;
+    // display: block;
+    // height: 40px;
+
+    &__chip {
+        font-family: 'Montserrat';
+        margin-inline-end: .75rem;
+        padding: .7rem .8rem;
+        border-radius: 20px;
+        background: var(--gray-light-1);
+        color: var(--primary);
+        font-size: 13px;
+        font-weight: var(--font-weight-b);
+    
+        i {
+            margin-inline-end: .5rem;
+        }
+    }
+}
+

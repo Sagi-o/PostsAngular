@@ -1,0 +1,80 @@
+// Base properties for site and styles reset
+html {
+    box-sizing: border-box;
+    font-size: var(--font-size); // Base font size and relational size for rem unit
+    line-height: var(--line-height);
+    font-family: var(--font-family);
+    font-weight: var(--font-weight);
+    background-color: var(--light-gray-3);
+    scroll-behavior: smooth;
+    color: var(--dark-3); // Base font color
+
+    // Default is Hebrew = RTL
+    // direction: rtl;
+    background: var(--white);
+}
+  
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+	font-weight: inherit;
+	font-family: inherit;
+    font-style: inherit;
+    vertical-align: baseline;
+	font-size: 100%;
+	border: 0 none;
+	outline: 0;
+    margin: 0;
+    padding: 0;
+    
+    // span {
+    //     color: var(--dark-3); // Base font color
+    // }
+
+    // letter-spacing: 0px;
+    // Makes scrolling smooth on divs
+    -webkit-overflow-scrolling: touch;
+}
+
+// Set Image and Objects to have a max-width of 100%
+embed,
+iframe,
+img,
+object,
+video {
+    max-width: 100%;
+}
+
+// Completely resets form items
+// ----------------------------
+// Super hard reset that removes all borders
+// and radius of all form items.
+input,
+textarea,
+button {
+  border-radius: 0;
+  appearance: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+// Scroll bar styling
+::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+ 
+::-webkit-scrollbar-track {
+    // -webkit-box-shadow: inset 0 0 6px white;
+    box-shadow: inset 0 0 6px white;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}

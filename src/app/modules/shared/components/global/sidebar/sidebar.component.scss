@@ -1,0 +1,229 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    background: var(--light-0);
+    animation: fadeIn 500ms ease-out;
+}
+
+#content {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--light-0);
+    color: var(--dark-1);
+    padding: 2rem;
+    // max-width: 1200px;
+    // background: rgba(211, 216, 217, 0.25);
+    // TODO: Check if it good that it is not scrolled in y axis (can't make sticky postion with parent overflow
+    // overflow-y: scroll;
+}
+
+#logout {
+    margin-block-start: auto;
+}
+
+#logo {
+    font-family: 'Montserrat';
+    font-size: 1.6rem;
+    font-weight: var(--font-weight-b2);
+    color: var(--dark-1);
+    margin-block-end: 3rem;
+    user-select: none;
+}
+
+.sidebar {
+    min-width: 225px;
+    max-width: 225px;
+    background: var(--sidebar-background);
+    color: var(--sidebar-text);
+    transition: var(--base-speed);
+    // position: relative;
+    z-index: 99;
+
+    &--mobile {
+        box-shadow: var(--shadow-3);
+        display: none;
+    }
+
+    &--desktop {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: 1.25rem .75rem;
+        box-shadow: 0px 4px 30px -10px rgba(0, 0, 0, 0.25);
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+    }
+
+    &__image {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        object-fit: cover;
+        width: 100%;
+        z-index: 99;
+
+        img {
+            max-height: 450px;
+            height: 450px;
+            object-fit: cover;
+        }
+    }
+
+    &__image-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgb(255,255,255);
+        background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(244, 244, 244, 1) 100%);
+        z-index: 100;
+    }
+
+    &__title {
+        margin-block-end: 2rem;
+        font-display: var(--font-weight);
+        font-size: var(--font-size-l1);
+        font-family: 'Montserrat';
+        font-weight: var(--font-weight-b);
+    }
+
+    &__name {
+        margin-block-start: .5rem;
+        font-weight: var(--font-weight-b);
+        border-radius: var(--border-radius);
+        background: rgba(250, 250, 250, 0.082);;
+        color: var(--sidebar-text);
+        padding: .3rem .8rem;
+    }
+
+    &__item {
+        padding: 0.8rem;
+        transition: var(--fast-speed);
+        cursor: pointer;
+        border-radius: var(--border-radius);
+        margin-block-end: .25rem;
+        display: flex;
+        flex-direction: row;
+        max-width: 225px;
+        position: relative;
+
+        &:hover {
+            background: var(--sidebar-hover-background);
+        }
+    }
+
+    &__text {
+        min-width: 130px
+    }
+
+    &__icon {
+        margin-inline-end: 1rem;
+        transition: var(--base-speed);
+        position: relative;
+    }
+
+    .mobile-selected {
+        color: var(--primary);
+        background: transparent;
+    }
+
+    .selected {
+        background: var(--sidebar-selected-background);
+        color: var(--sidebar-selected-text);
+    }
+}
+
+.collapsed {
+    min-width: 50px;
+
+    .sidebar {
+        &__item {                
+            &:hover {
+                background: rgba(250, 250, 250, 0.082);
+            }
+        }
+
+        &__text {
+            display: none;
+        }
+    }
+}
+
+@import 'src/scss/variables/breakpoints';
+
+@media only screen and (max-width: $tablet) {
+    #content {
+        padding-block-end: calc(1rem + 60px);
+        padding-inline-start: 1rem;
+        padding-inline-end: 1rem;
+        padding-block-start: 1.5rem;
+        width: 100vw;
+    }
+
+    $height: 58px;
+
+    .sidebar {
+        border-radius: 0;
+        position: fixed;
+        bottom: 0;
+        height: $height;
+        width: 100vw;
+        max-width: 100vw;
+        // background: var(--light-1);
+
+        // New
+        // background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+
+        &--desktop {
+            display: none;
+        }
+
+        &--mobile {
+            display: flex;
+            flex-direction: row;
+            // justify-content: space-evenly;
+            width: 100%;
+            // padding: 2px;
+        }
+
+        &__item {
+            // padding: 0.8rem;
+            border: 0;
+            transition: var(--fast-speed);
+            border-radius: 0;
+            margin: 0;
+            height: $height;
+            text-align: center;
+            flex: 1;
+            flex-direction: column;
+            align-items: center;
+            min-width: 25px;
+            max-width: none;
+            position: relative;
+
+            &:hover {
+                background: rgba(250, 250, 250, 0.082);
+            }
+        }
+
+        &__text {
+            font-size: 0.8rem;
+            width: fit-content;
+            margin-block-start: 1px;
+            min-width: 0;
+        }
+
+        &__icon {
+            margin: 0;
+            display: block;
+        }
+
+        .selected {
+            border: 0;
+        }
+    }
+}

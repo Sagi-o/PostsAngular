@@ -1,0 +1,97 @@
+.simple-table {
+    width: 100%;
+    border-radius: var(--border-radius);
+    background: white;
+    padding: 0 3rem;
+    // border-spacing: 0;
+    // border-collapse: collapse;
+    overflow-x: auto;
+    border: 1px solid var(--gray-light-1);
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    &__tr {
+        border-bottom: 1px solid lightgray;
+        // border-bottom: 1px solid var(--gray-light-1);
+        transition: var(--fast-speed);
+        max-height: 54px;
+
+        // :not(:first-child) 
+        &:hover {
+            color: black;
+            background: var(--gray-light-0); 
+        }
+
+
+        &:last-child {
+            border-bottom: 1px solid transparent;
+        }
+
+        // &:nth-child(even) {
+        //     background: var(--gray-light-1);
+        // }
+    }
+    
+
+    &__th {
+        // padding: 1.8rem;
+        height: 4.5rem;
+        vertical-align: middle;
+        font-weight: var(--font-weight-b);
+        color: black;
+    }
+
+    &__td {
+        padding: 1.3rem;
+        text-align: center;
+        position: relative;
+        vertical-align: middle;
+        // max-width: 220px;
+        max-height: 54px;
+    }
+
+    &__profile_photo {
+        padding: 0;
+        padding-inline-start: 2rem;
+    };
+
+    &__ranking {
+        border-radius: 1rem;
+        color: var(--yellow);
+        border: 1px solid var(--yellow);
+        padding: 0.2rem 0.7rem;
+    }
+
+    &__volunteers {
+        border-radius: 1rem;
+        color: var(--primary-dark);
+        border: 1px solid var(--primary-dark);
+        padding: 0.2rem 0.7rem;
+    }
+}
+
+@import 'src/scss/variables/breakpoints';
+
+@media only screen and (max-width: $mobile) {
+    .simple-table {
+        font-size: var(--font-size-s1);
+        // width: fit-content;
+        width: 100%;
+        padding: 0;
+
+       &__td, &__th {
+            padding: 1rem;
+       }
+
+        &__approve {
+            display: block;
+        }
+
+        &__reject {
+            display: block;
+        }
+    }
+}

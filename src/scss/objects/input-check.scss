@@ -1,0 +1,115 @@
+// Radio and Checkbox
+$radio-w-h: 1.6rem;
+
+.radio, .checkbox {
+    position: relative;
+    background-color: transparent;
+    border: 1px solid var(--dark-1);
+    top: 0.4rem;
+    height: $radio-w-h;
+    width: $radio-w-h;
+    border-radius: 50%;
+    // cursor: pointer;     
+    transition: var(--fast-speed);
+    margin-inline-end: 0.5rem;
+    color: var(--dark-1);
+}
+
+.checkbox {
+    border-radius: 50%;
+}
+
+.radio::before, .checkbox::before {
+    transition: var(--fast-speed);
+    position: absolute;
+    content: '\02143';
+    color: transparent;
+    position: absolute;
+    border-radius: 100%;
+    right: 0.6rem;
+    transform: scale(0.8) rotate(40deg);
+}
+
+.radio:checked::before, .checkbox:checked::before {
+    position: absolute;
+    content: '\02143';
+    color: var(--black);
+    transition: var(--fast-speed);
+    position: absolute;
+    border-radius: 100%;
+    right: 8px;
+    transform: scaleX(1) rotate(40deg);
+}
+
+.checkbox:hover + label {
+    color: var(--primary);
+}
+
+.radio:checked + label, .checkbox:checked + label {
+    color: var(--dark-1);
+}
+
+.radio + label, .checkbox + label {
+    cursor: pointer;
+    transition: var(--fast-speed);
+    color: var(--dark-1);
+    // user-select: none;
+}
+
+.radio:hover + label {
+    color: var(--primary);
+}
+
+.radio:disabled, .checkbox:disabled {
+    background-color: var(--light-gray-2);
+    color: var(--light-gray-1);
+    cursor: default;
+}
+
+.radio:disabled + label, .checkbox:disabled + label {
+    color: var(--light-gray-1);
+    cursor: default;
+}
+
+@mixin radio {
+    border-radius: 100%;
+    background: transparent;
+    border: 1px solid var(--light-1);
+    box-shadow: 0 0 0 1pt transparent;
+    height: 10px;
+    width: 10px;
+    // font-size: var(--font-size-s2);
+    cursor: pointer;
+    margin-inline-end: .4rem;
+
+    + label {
+        cursor: pointer;
+        // font-size: 1rem;
+    }
+
+    &:checked + label {
+        color: var(--dark-1);
+    }    
+}
+
+// .radio--primary {
+//     @include radio;
+//     border: 1px solid var(--primary-dark);
+// }
+
+// .radio--primary:checked {
+//     @include radio;
+//     box-shadow: 0 0 0 1pt var(--primary-dark);
+//     background: var(--primary-dark);
+// }
+
+// .radio--accent {
+//     @include radio;
+//     border: 1px solid var(--accent);
+// }
+
+// .radio--accent:checked {
+//     @include radio;
+//     box-shadow: 0 0 0 1pt var(--accent);
+//     background: var(--accent);
+// }

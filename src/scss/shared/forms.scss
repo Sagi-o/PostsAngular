@@ -1,0 +1,29 @@
+.form-photo-upload {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &__image_photo {
+        height: 90px;
+        width: 90px;
+        border-radius: 10px;
+        margin-inline-end: 2rem;
+        object-fit: contain;
+    }
+
+    i {
+        font-size: 4rem;
+        line-height: 90px;
+    }
+
+    &__text-upload {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.form__error {
+    color: var(--red);
+    font-size: var(--font-size-s1);
+}

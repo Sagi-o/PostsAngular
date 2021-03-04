@@ -1,0 +1,71 @@
+:root {
+    --primary: #564541;
+    --primary-light: #96A0A1;
+
+    --accent: #7D8997;
+    --accent-light: #BEC2C2;
+
+    --gradient-light: #75CAC3;
+    --gradient-dark: #2D7488;
+
+    --sidebar-background: rgba(244, 244, 244, 0.7);
+    --sidebar-text: var(--primary);
+    --sidebar-hover-background: var(--gray-light-3);
+    --sidebar-selected-text: white;
+    --sidebar-selected-background: var(--primary);
+
+    --navbar-background: white;
+    --navbar-text: var(--dark-1);
+
+    --focus: var(--primary);
+    
+    --gray-light-0: rgb(250, 250, 250);
+    --gray-light-1: #f4f4f4;
+    --gray-light-2: #f2f2f2;
+    --gray-light-3: #CCCCCC;
+
+    --gray-1: rgba(229, 229, 234, 1);
+
+    --blue: #265CDE;
+    --blue-light: #E2EEFF;
+
+    --purple: #be66ff;
+    --purple-light: #EBD8F9;
+
+    --red: #ff3a3b;
+    --red-light: #FBEAE5;
+
+    --green: #50B83C;
+    --green-light: rgb(234, 241, 232);
+    --green-1: rgba(49, 216, 78, 1);
+
+    --green-bg-opacity: rgba(227, 241, 223, 1);
+    --red-bg-opacity: rgba(251, 234, 229, 1);
+    --orange-bg-opacity: rgba(252, 235, 219, 1);
+    --black-bg-opacity: rgba(38, 38, 38, 1);
+
+    --orange: #fe7725;
+
+    --yellow: #f4b400;
+    --yellow-1: #FFC700;
+    --yellow-light: #fffac8;
+
+    --gradient-0: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%);
+
+    --white: #fff;
+    --black: #000;
+
+    --white-opacity: #fff;
+
+    --light-0: #FCFDFE;
+    --light-1: rgb(250, 250, 250);
+    --light-2: #f2f2f2;
+    --light-3: #CCCCCC;
+
+    --dark-0: #131313;
+    --dark-1: #212528;
+    --dark-2: #333333;
+    --dark-3: #343a40;
+    --dark-4: #6D6D6D;
+    --dark-5: #AFAFAF;
+}

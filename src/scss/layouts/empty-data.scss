@@ -1,0 +1,21 @@
+.empty-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    animation: fadeIn 300ms ease-in;
+    text-align: center;
+
+    #illustration {
+        max-height: 170px;
+        margin-block-end: 3rem;
+    }
+
+    button {
+        max-width: 140px;
+        margin-block-start: 1rem;
+    }
+}

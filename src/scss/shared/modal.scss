@@ -1,0 +1,74 @@
+.modal {
+    width: 560px;
+    height: 400px;
+
+    &__top {
+        height: 152px;
+        background: var(--gray-light-2);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__bottom {
+        text-align: center;
+        height: 248px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: var(--dark-1);
+        padding: 1rem;
+    }
+
+    &__title {
+        font-size: 20px;
+        margin-block-end: 2rem;
+        font-weight: var(--font-weight-b);
+    }
+
+    &__description {
+        margin-block-end: 1rem;
+    }
+
+    &__subtitle {
+        font-size: 12px;
+        margin-block-end: 2rem;
+    }
+
+    &__illustration {
+        max-height: 160px;
+        margin-block-start: 3rem;
+    }
+}
+
+@import 'src/scss/variables/breakpoints';
+
+@media only screen and (max-width: $tablet) {
+    .modal {
+        width: 100vw;
+        height: 100vh;
+
+        &__top {
+            width: 100%;
+            height: 38vh;
+            background: var(--gray-light-2);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        &__bottom {
+            width: 100%;
+            text-align: center;
+            height: 62vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-1);
+        }
+    }
+}

@@ -1,0 +1,62 @@
+
+.chip {
+    $height: 2.5rem;
+
+    border-radius: 22px;
+    background: var(--primary);
+    width: fit-content;
+    margin-inline-end: .5rem;
+    margin-block-start: 0.25rem;
+    height: $height;
+    line-height: $height;
+    padding: 0 1rem;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    animation: slideRight var(--stagger-speed) forwards;
+    transition: var(--fast-speed);
+    user-select: none;
+
+    i {
+        line-height: $height;
+        transition: var(--fast-speed);
+        cursor: pointer;
+        margin-inline-start: 1rem;
+
+        &:hover {
+            filter: brightness(0.8);
+        }
+    }
+}
+
+// Normal List item style, with input width
+.chip-1 {
+    $height: 2.5rem;
+    border-radius: var(--border-radius);
+    background: var(--primary-light);
+    width: fit-content;
+    height: $height;
+    line-height: $height;
+    padding: 0 1rem;
+    margin-block-start: 0.25rem;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--primary);
+    animation: slideRight var(--stagger-speed) forwards;
+    margin-inline-end: .5rem;
+    margin-block-start: 0.25rem;
+    font-weight: var(--font-weight-b);
+
+    i {
+        line-height: $height;
+        transition: var(--fast-speed);
+        cursor: pointer;
+
+        &:hover {
+            color: var(--primary);
+        }
+    }
+}

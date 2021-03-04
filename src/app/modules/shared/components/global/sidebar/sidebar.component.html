@@ -1,0 +1,40 @@
+<aside class="container" #container>
+
+    <div class="sidebar" [class.sticky-sidebar]="isSidebarSticky && !isMobile">
+
+        <div class="sidebar--desktop">
+            <div class="sidebar__title" *ngIf="title">
+                {{ title }}
+            </div>
+            <div>
+                <div class="sidebar__item" [class.selected]="selected === item.key" (click)="onItemClick(item.value)" *ngFor="let item of items | keyvalue:originalOrder">
+                    <span class="sidebar__icon">
+                        <i [class]="item.value.icon"></i>
+                    </span>
+                    <span #itemText class="sidebar__text">
+                        {{ item.value.label }}
+                    </span>
+                </div>
+            </div>
+            <!-- <div class="sidebar__image">
+                <img src="https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+                <div class="sidebar__image-overlay"></div>
+            </div> -->
+        </div>
+
+        <div class="sidebar--mobile">
+            <div class="sidebar__item" [class.selected]="selected === item.key" (click)="onItemClick(item.value)" *ngFor="let item of items | keyvalue:originalOrder">
+                <span class="sidebar__icon">
+                    <i [class]="item.value.icon"></i>
+                </span>
+                <span #itemText class="sidebar__text">
+                    {{ item.value.label }}
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div id="content">
+        <ng-content #content></ng-content>
+    </div>
+</aside>

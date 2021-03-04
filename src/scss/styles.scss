@@ -1,0 +1,80 @@
+@import 'base/base';
+
+@import 'variables/colors';
+@import 'variables/global';
+@import 'variables/typography';
+@import 'variables/breakpoints';
+
+@import 'layouts/empty-data';
+
+// @import 'objects/typography';
+@import 'objects/lists';
+@import 'objects/input-text';
+@import 'objects/input-check';
+@import 'objects/input-switch';
+@import 'objects/buttons';
+@import 'objects/select';
+@import 'objects/headers';
+@import 'objects/slider';
+@import 'objects/chips';
+
+@import 'helpers/helpers';
+@import 'helpers/shadows';
+@import 'helpers/animations';
+@import 'helpers/flexbox';
+@import 'helpers/colors';
+
+@import 'shared/dashboard';
+@import 'shared/simple-table';
+@import 'shared/dashboard-item-details';
+@import 'shared/date-picker';
+@import 'shared/forms';
+@import 'shared/labels';
+@import 'shared/tooltip';
+@import 'shared/modal';
+
+// Using BEM = Block Element Modifier
+/*
+Example:
+Card with image, text and button. 
+
+Card container is the block. card
+
+Image is an element:  card__image
+Title is an element: card__title
+
+*Button is also an element, but it has modifiers for its styling:
+card__button card__button--active
+
+*Card block can also have modifier:
+card card--active
+
+In SCSS:
+
+.card {
+    padding: 1rem;
+
+    &__img {
+        height: 100px;
+        width: 100px;
+    }
+
+    &__title {
+        color: white;
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        margin-inline-start: 1rem;
+
+        &--active {
+            background: lightgray;
+        }
+    }
+
+     
+}
+*/

@@ -1,0 +1,27 @@
+
+@mixin header {
+    color: var(--dark-1);
+    font-weight: var(--font-weight-b);
+    font-family: 'Montserrat';
+}
+
+h1 {
+    @include header;
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+h2 {
+    @include header;
+    font-size: 1.5rem;
+}
+
+h3 {
+    @include header;
+    font-size: 1.17rem;
+}
+
+h4 {
+    @include header;
+    font-size: 1rem;
+}

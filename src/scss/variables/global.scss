@@ -1,0 +1,15 @@
+// Site global variables
+:root {
+    // Border radius
+    --border-radius: 6px;
+
+    // Transition
+    --normal-speed: all 200ms ease-in-out;
+    --fast-speed: all 100ms ease-in-out;
+    --stagger-speed: 300ms;
+
+    --content-max-width: 1200px;
+
+    --navbar-logo-height: 2rem;
+    --navbar-height: 4rem;
+}
